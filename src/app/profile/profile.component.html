@@ -1,0 +1,80 @@
+<section class="container mt-5 p-5 mb-5">
+  <form>
+    <div class="row mx-5 g-5 mb-5 pb-1" *ngFor="let user of UserList">
+      <!-- User Info Display -->
+      <div class="col-md-10 offset-md-1 d-flex align-items-center py-5 px-4 rounded-3 sections user-info">
+          <h1 class="mt-5 pt-5 ms-4">Hello, <span>{{user.name}}</span></h1>
+      </div>
+      <!-- User Info Form -->
+      <div class="col-md-10 offset-md-1 py-5 px-4 user-info">
+        <!-- Email -->
+        <div class="mx-5 my-3">
+          <label for="user_email" class="text-muted fs-5">E-Mail Address</label>
+          <input type="email" id="user_email" class="form-control fs-5 fw-semibold" disabled name="email" [(ngModel)]="user.email" required>
+        </div>
+          <!-- Name -->
+          <div class="mx-5 my-3">
+              <label for="user_name" class="text-muted fs-5">Name</label>
+              <input type="text" id="user_name" class="form-control fs-5 fw-semibold" name="name" [(ngModel)]="user.name" required>
+          </div>
+          <!-- Phone -->
+          <div class="mx-5 my-3">
+              <label for="user_phone" class="text-muted fs-5">Phone Number</label>
+              <input type="text" id="user_phone" class="form-control fs-5 fw-semibold" name="phone" [(ngModel)]="user.phone" required>
+          </div>
+          <!-- Address -->
+          <div class="mx-5 my-3">
+              <label for="user_address" class="text-muted fs-5">Address</label>
+              <input type="text" id="user_address" class="form-control fs-5 fw-semibold" name="address" [(ngModel)]="user.address" required>
+          </div>
+          <!-- Additional Info -->
+          <div class="mx-5 my-3">
+              <label for="user_info" class="text-muted fs-5">Additional Information</label>
+              <input type="text" id="user_info" class="form-control fs-5 fw-semibold" name="information" [(ngModel)]="user.information">
+          </div>
+          <!-- Save and Cancel Buttons -->
+          <div class="d-flex justify-content-center">
+              <div class="my-4">
+                <button type="submit" class="btn btn-style btn-syle btn-checkout my-4 px-5 py-2 fw-semibold rounded-4 fs-5" (click)="updateUser(user.email, user)">Save</button>
+                <button [routerLink]="['/add_product']" routerLinkActive="add_product"  class="btn btn-success btn-checkout d-block px-5 py-2 fw-semibold rounded-4 fs-5">Add Product</button>              </div>
+          </div>
+      </div>
+    <!-- Selling Statistics -->
+      <div class="foot bg-black w-100"></div>
+      <h3 class="my-1 pt-5" style="font-size: 30px;">Selling Statistics</h3>
+      <div class="col-md-8 offset-md-2 px-4 rounded-3">
+        <canvas #histogramChart width="1300" height="500"></canvas>
+      </div>
+      <div class="foot bg-black w-100"></div>
+        <h3 class="my-1 pt-5" style="font-size: 30px;">My Product Feedback</h3>
+        <div class="col-md-8 offset-md-2 px-4 rounded-3">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Buyer's name </th>
+                <th>Product Name</th>
+                <th>Count </th>
+                <th>Price </th>
+                <th>Feedback</th>
+                <th>Rating</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngFor="let product of productsList">
+                <tr *ngFor="let checkout of checkoutList">
+                  <ng-container *ngIf="product.id === checkout.product_id">
+                    <td>{{ checkout.user_email }}</td>
+                    <td>{{ product.title }}</td>
+                    <td>{{ checkout.count }}</td>
+                    <td>{{ checkout.total_price }}</td>
+                    <td>{{ checkout.feedback || 'No feedback yet' }}</td>
+                    <td>{{ checkout.rating || 'No rating yet' }}</td>
+                  </ng-container>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </div>
+    </div>
+  </form>
+</section>

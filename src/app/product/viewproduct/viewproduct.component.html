@@ -1,0 +1,90 @@
+<section class="container my-5">
+
+  <div class="row pb-5" *ngFor="let product of productsList">
+      <div class="col-md-5 offset-1 p-5 pe-4 mb-5">
+          <div class="product-main-img rounded-4">
+              <img [src]="product.photos[0]" alt="" class="rounded-4 w-100 h-100 border-3">
+          </div>
+      </div>
+      <div class="col-md-6 p-5 ps-0">
+          <div class="mt-4">
+            <h4 class="fs-3 fw-bold">Product Name: {{product.title}}</h4>
+              <p class="fs-3 fw-bold">Category: {{product.category}}</p>
+              <div class="d-flex align-items-center">
+                  <button class="btn products-btns me-3" (click)="addChatMessage(product.user_id)">Contact the seller</button>
+                  <div class="mx-5">
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star"></span>
+                  </div>
+              </div><br>
+              <div *ngFor="let user of UserList">
+                <p class="text-muted" style="font-size: 20px;" *ngIf="product.user_id === user.email">seller: {{user.name}}</p>
+              </div>
+              <div class="foot bg-black my-3 w-50"></div>
+              <p class="fs-3 fw-bold">Price: <span> {{product.price}}</span></p>
+              <p class="fw-semibold fs-5">Description</p>
+              <p>{{product.description}}</p>
+              <div class="d-flex justify-content-center mt-5">
+                  <button class="btn btn-dark rounded-3 py-1 buy-btn" (click)="addCart()" >Buy Now</button>
+              </div>
+              <div class="d-flex justify-content-center my-3">
+                  <div class="d-flex justify-content-center rounded-3 bg-info counter-plus-minus">
+                    <button (click)="decrementCounter()" style="background-color: transparent; border: none;">
+                      <mat-icon style="width: 35px ; height: 35px;" svgIcon="minus" aria-hidden="false" aria-label="Minus icon"></mat-icon>
+                    </button>
+                    <p id="cart-counter" style="padding-top: 7px;" class="mx-2 m-0 mx-3 fs-5">{{ counterValue }}</p>
+                    <button (click)="incrementCounter()" style="background-color: transparent; border: none;">
+                      <mat-icon style="width: 35px ; height: 35px;" svgIcon="plus" aria-hidden="false" aria-label="Plus icon"></mat-icon>
+                    </button>
+                  </div>
+                  <button class="btn btn-success rounded-3 p py-0 btn-addToCart" (click)="addCart()">Add to Cart</button>
+                  <button style="background-color: transparent; border: none;" (click)="addWishlist()">
+                    <mat-icon style="width: 35px; height: 35px;" class="heart" svgIcon="heart" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
+                  </button>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-10 offset-1 my-5 py-5 ">
+          <div class="feedback mt-5 p-3 rounded-3">
+              <h2 class="fs-1 fw-bold">Customer Feedback</h2><hr>
+              <div *ngFor="let checkout of CheckoutList">
+                <ng-container  *ngFor="let user of UserList">
+                  <ng-container *ngIf="checkout.user_email === user.email">
+                  <p style="font-size: 20px;">UserName: {{user.name}}  <br> Feedback: {{checkout.feedback}}  , Rating: {{checkout.rating}}</p>
+                  <hr>
+                </ng-container>
+                </ng-container>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-md-10 offset-1 my-5">
+          <p class="fs-3 fw-semibold ms-2">You might also like</p>
+          <div class="products-carousel py-3 rounded-3 mb-5">
+            <owl-carousel-o [options]="customOptions" >
+              <ng-template carouselSlide *ngFor="let productcat of productsCategory" >
+                <div class="mx-2" *ngIf="product.category === productcat.category">
+                <div class="categories rounded" >
+                    <a href=""><img [src]="productcat.photos[0]" class="w-100"></a>
+                    <div class="layer w-100 h-100">
+                        <div class="d-flex h-100 align-items-center">
+                            <div class="px-5">
+                              <a href="/view_product/{{productcat.id}}" style="text-decoration: none; color: black;">
+                                <h3 class="fs-1 fw-normal">{{ productcat.title }}</h3>
+                              </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </ng-template>
+            </owl-carousel-o>
+          </div>
+          </div>
+
+      </div>
+
+
+</section>

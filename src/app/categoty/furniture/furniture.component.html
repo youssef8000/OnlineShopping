@@ -1,0 +1,21 @@
+<section class="container mt-5 p-5">
+  <h2 style="font-size: 40px;">Furniture</h2>
+  <div class="row mx-5 g-5 mb-5 pb-5">
+
+    <div class="col-md-4" *ngFor="let product of productsList">
+      <div class="category-product rounded">
+        <img [src]="product.photos[0]" class="w-100">
+        <div class="layer w-100 h-100">
+              <div class="d-flex h-100 align-items-center">
+                  <div class="px-5">
+                    <a [routerLink]="['/view_product', product.id]" style="text-decoration: none; color: black;">
+                      <h3 class="fs-1 fw-normal">{{ product.title }}</h3>
+                    </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+</section>

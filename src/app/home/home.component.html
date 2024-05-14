@@ -1,0 +1,164 @@
+<link rel="stylesheet" href="./home.component.css">
+<!-- <h1>Welcome to the Home Page</h1>
+<div *ngIf="userId && userEmail">
+  <h4>User Details:</h4>
+  <p>User ID: {{ userId }}</p>
+  <p>Email: {{ userEmail }}</p>
+</div>
+<div *ngIf="!userId || !userEmail">
+  <p>No user data available.</p>
+</div> -->
+<section id="carouselExample" class="carousel slide ">
+  <div class="carousel-inner">
+    <div class="carousel-item active position-relative">
+      <div class="carousel-img">
+          <img src="../../assets/Image/slider/1.jpeg" alt="" width="1500" height="550">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-img">
+          <img src="../../assets/Image/slider/2.jpeg" alt="" width="1500" height="550">
+      </div>
+
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-img">
+          <img src="../../assets/Image/slider/4.jpeg" alt="" width="1500" height="550">
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</section>
+
+<section class="container-fluid py-5" id="Recommended">
+  <div class="row pt-5 gx-2 ">
+      <h3 class="text-center mt-5" style="font-size: 30px;"><b> Popular Categories</b></h3>
+
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide><div class="mx-2">
+        <div class="categories rounded">
+            <a href=""><img src="../../assets/Image/Furniture/WhatsApp Image 2024-05-08 at 6.25.17 PM (2).jpeg" class="w-100"></a>
+            <div class="layer w-100 h-100">
+                <div class="d-flex h-100 align-items-center">
+                    <div class="px-5">
+                        <a style="text-decoration: none; color: black;" href="/furniture" ><h3 class="fs-1 fw-normal">Furniture</h3></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></ng-template>
+      <ng-template carouselSlide><div class="mx-2">
+        <div class="categories rounded">
+            <a href=""><img src="../../assets/Image/Airpods/WhatsApp Image 2024-05-08 at 6.25.20 PM.jpeg" class="w-100"></a>
+            <div class="layer w-100 h-100">
+                <div class="d-flex h-100 align-items-center">
+                    <div class="px-5">
+                      <a style="text-decoration: none; color: black;" href="/airpods" ><h3 class="fs-1 fw-normal">Airpods</h3></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></ng-template>
+      <ng-template carouselSlide><div class="mx-2">
+              <div class="categories rounded">
+                  <a href=""><img src="../../assets/Image/Clothes/Autumn Winter Knitted Sweaters Men Fashion Casual Knitting Clothing O Neck Blue Black Vintage Pullovers Warm Solid Sweater Man Khaki-XXL.jpeg" class="w-100"></a>
+                  <div class="layer w-100 h-100">
+                      <div class="d-flex h-100 align-items-center">
+                          <div class="px-5">
+                            <a style="text-decoration: none; color: black;" href="/clothes" ><h3 class="fs-1 fw-normal">Clothes</h3></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div></ng-template>
+      <ng-template carouselSlide><div class="mx-2">
+              <div class="categories rounded">
+                  <a href=""><img src="../../assets/Image/Watches/10 ESSENTIAL Accessories For Men _ Spring 2020 List.jpeg" class="w-100"></a>
+                  <div class="layer w-100 h-100">
+                      <div class="d-flex h-100 align-items-center">
+                          <div class="px-5">
+                            <a style="text-decoration: none; color: black;" href="/watches" ><h3 class="fs-1 fw-normal">Watches</h3></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div></ng-template>
+      <ng-template carouselSlide><div class="mx-2">
+              <div class="categories rounded">
+                  <a href=""><img src="../../assets/Image/Bags/436858206_458330449924812_7566164885974706079_n.jpg" class="w-100"></a>
+                  <div class="layer w-100 h-100">
+                      <div class="d-flex h-100 align-items-center">
+                          <div class="px-5">
+                            <a style="text-decoration: none; color: black;" href="/bags" ><h3 class="fs-1 fw-normal">Bags</h3></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div></ng-template>
+    </owl-carousel-o>
+
+
+</div>
+</section>
+<section class="container-fluid pt-5" id="about">
+  <div class="row">
+      <!-- <div class="col-md-8 ms-5 py-4 px-5">
+          <p class="text-muted fs-5">why you choosing us ?</p>
+          <h3>We work to an extremly high <br> standards of customer satisfaction</h3>
+      </div> -->
+      <div class="col-md-12 d-flex justify-content-center text-center px-5">
+          <div class="col-md-4 p-4">
+              <div>
+                  <div  class="d-flex justify-content-center">
+                      <div class="d-flex justify-content-center align-items-center rounded-circle my-3 icon">
+                        <mat-icon style="width: 50px ; height: 60px;" svgIcon="shield" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
+                      </div>
+                  </div>
+                  <div>
+                      <h5 class="fs-3">Integrity</h5>
+                      <p class="fs-5 py-3">we ensure that businesses operate with honesty, transparency, and fairness, fostering trust and confidence among customers</p>
+                  </div>
+              </div>
+
+          </div>
+
+          <div class="col-md-4 text-center p-4">
+              <div>
+                  <div class="d-flex justify-content-center">
+                      <div class="d-flex justify-content-center align-items-center rounded-circle my-3 icon">
+                        <mat-icon style="width: 50px ; height: 60px;" svgIcon="delivery_icon" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
+                      </div>
+                  </div>
+                  <div>
+                      <h5 class="fs-3">Delivery</h5>
+                      <p class="fs-5 py-3">we offer efficient and reliable delivery, emsuring that items arrive on time and in the expected condition</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4 text-center p-4">
+              <div>
+                  <div class="d-flex justify-content-center">
+                      <div class="d-flex justify-content-center align-items-center rounded-circle my-3 icon">
+                        <mat-icon style="width: 50px ; height: 60px;" svgIcon="deal_icon" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
+                      </div>
+                  </div>
+                  <div>
+                      <h5 class="fs-3">Payments</h5>
+                      <p class="fs-5 py-3">we offer secure payments, utilizing advanced encryption and fraud prevention measures to protect customer transactions</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+  </div>
+
+</section>
+
+

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "online-shopping-90f0e": {
+      "hosting": {
+        "TaskManagement": [
+          "online-shopping-90f0e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "online-shopping-90f0e"
+  }
+}

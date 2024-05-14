@@ -1,0 +1,36 @@
+<section class="container py-5">
+  <h1 style="font-size: 50px;">Update Product</h1>
+  <div class="row">
+    <div class="col-md-10 offset-md-1" *ngFor="let product of productsList">
+      <form >
+        <label for="category" class="text-muted mt-5">Category</label>
+        <select name="category" id="category" class="btn btn-light text-start px-3 d-block mb-4" [(ngModel)]="product.category" required>
+          <option value="" disabled selected class="fw-bold bg-black">Select Category</option>
+          <option value="bags">Bags</option>
+          <option value="clothes">Clothes</option>
+          <option value="airpods">Airpods</option>
+          <option value="watches">Watches</option>
+          <option value="furniture">Furniture</option>
+        </select>
+
+        <label for="title" class="text-muted">Title</label>
+        <input type="text" name="title" id="title" class="form-control" placeholder="Title" [(ngModel)]="product.title" required>
+
+        <label for="description" class="text-muted">Description</label>
+        <textarea name="description" id="description" class="form-control" cols="30" rows="5" placeholder="Description" [(ngModel)]="product.description" required></textarea>
+
+        <label for="price" class="text-muted">Price</label>
+        <input type="number" name="price" id="price" class="form-control mb-5" placeholder="EGP" [(ngModel)]="product.price" required>
+
+        <p class="mb-1 text-muted">Upload Photos</p>
+        <input type="file" name="photos" accept="image/*" class="form-control" multiple [(ngModel)]="product.photos" (change)="onFileSelected($event)">
+
+        <label for="location" class="mt-5 text-muted">Your ad's location</label>
+        <input type="text" name="location" id="location" class="form-control" placeholder="Location" [(ngModel)]="product.location" required>
+        <div class="d-flex justify-content-center mt-4 mb-5 pb-5">
+          <button type="submit" class="btn mx-auto mt-1 py-2 w-25 fw-bold btn-post" (click)="updateProduct(product.id, product,uploadedPhotos)">Update Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

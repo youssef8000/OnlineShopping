@@ -1,0 +1,20 @@
+.message {
+  padding: 10px !important;
+  border-radius: 5px !important;
+  margin-bottom: 10px !important;
+}
+
+.left-message {
+  background-color: #f0f0f0 !important;
+  text-align: left !important;
+}
+
+.right-message {
+  background-color: #c1e7d1 !important;
+  text-align: right !important;
+}
+
+.full-width-message {
+  background-color: #f0f0f0 !important;
+  text-align: left !important;
+}

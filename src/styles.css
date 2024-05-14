@@ -1,0 +1,297 @@
+body {
+  background-color: rgba(240, 227, 240,85%);
+}
+
+.navbar {
+  background-color: rgb(231, 202, 230);
+}
+input, select{
+  background-color: rgb(231, 202, 230) !important;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+input::placeholder {
+
+  color: rgba(111, 89, 110, 50%) !important;
+
+}
+button:hover {
+  transform: scaleX(1.05);
+}
+
+h2 {
+  font-family: 'Roboto';
+  font-size: 68px;
+
+}
+
+.btn-style {
+  background-color: rgb(82, 19, 75);
+  color: rgb(255, 255, 255);
+}
+.btn-style:hover {
+  background-color: rgb(82, 19, 75);
+  color: rgb(255, 255, 255);
+}
+
+.btn-google {
+  background-color: rgb(232, 223, 223);
+  color: rgb(82, 19, 75);
+}
+.btn-google:hover{
+  background-color: rgb(206, 196, 196);
+  color: rgb(82, 19, 75);
+}
+
+header h2,
+h5 {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+header h5 {
+  color: rgba(0, 0, 0, 42%);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+a {
+  color: rgb(82, 19, 75);
+  font-weight: 700;
+}
+
+a:hover {
+  color: rgb(87, 20, 80);
+}
+
+.footer {
+  background-color: rgb(221, 179, 217);
+  font-family: 'Montserrat';
+
+}
+
+.foot {
+  height: 1px;
+}
+.btn-search {
+  top: 0;
+  bottom: 0;
+  right:  calc(50%);
+  background-color: rgb(185, 176, 176);
+  border: var(--bs-border-width) solid black;
+}
+.btn-search-chat {
+  top: 0;
+  bottom: 0;
+  right:  calc(1.2%);
+  background-color: rgb(185, 176, 176);
+  border: var(--bs-border-width) solid black;
+}
+.search-bar {
+  border: 1px solid black;
+  background-color: rgb(232, 227, 227) !important;
+}
+.search-bar::placeholder {
+  color: rgba(77, 77, 77, 79%) !important;
+}
+.nav-second {
+  background-color: rgb(82, 19, 75);
+}
+
+.btn-w
+.btn-sell:hover {
+
+  background-color: rgba(217, 217, 217, 90%);
+}
+
+.btn-shop {
+  top: 75%;
+  left: 20%;
+  color: white;
+  background-color: rgb(161, 154, 154);
+}
+.btn-shop:hover {
+  top: 75%;
+  left: 20%;
+  color: white;
+  background-color: rgb(102, 97, 97);
+}
+.icon {
+  height: 80px;
+  width: 80px;
+  font-size: 35px;
+  background-color: rgb(150, 144, 144);
+}
+#Recommended {
+  background-color: white;
+}
+#about {
+  background-color: rgb(217, 217, 217);
+}
+#help {
+  background-color: rgb(150, 144, 144);
+}
+
+footer {
+  background-color: rgb(217, 217, 217);
+}
+
+.photos-upoaded {
+  width: 210px;
+}
+
+.btn-post {
+  background-color: rgb(82, 19, 75);
+}
+.btn-post:hover{
+  background-color: rgb(82, 19, 75);
+
+}
+.product-img {
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+.product-img img {
+  transition: transform 1s;
+}
+.product-img:hover img{
+  transform: scale(1.15);
+}
+.checked {
+  color: orange;
+}
+
+.btn-add, .btn-minus {
+  cursor: pointer;
+}
+.heart {
+  font-size: 25px;
+  color: rgb(193, 189, 189);
+  cursor: pointer;
+}
+.heart-des {
+  font-size: 25px;
+  color: red;
+  cursor: pointer;
+}
+.buy-btn {
+  width: 360px;
+}
+.counter-plus-minus {
+  width: 150px;
+  margin-right: 10px;
+}
+.btn-addToCart {
+  width: 150px;
+  margin-right: 25px;
+}
+.fa-comments {
+  font-size: 70px;
+}
+.products-carousel, .feedback, .products-btns{
+  background-color: rgb(217, 217, 217);
+}
+.btn-checkout {
+  width: 225px;
+}
+.sections {
+  background-color: rgb(231, 202, 230);
+}
+.btn-wishlist {
+  width: 180px;
+}
+.product-main-img {
+  height: 550px;
+  overflow: hidden;
+}
+.product-main-img img {
+  transition: transform 1s;
+}
+.product-main-img:hover img{
+  transform: scale(1.15);
+}
+.category-product
+{
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.categories {
+  height: 230px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.products-mayknow {
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.layer
+{
+  background-color: rgba(255,255,255,.7);
+  color: #000;
+  font-weight: 800;
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  transition: top 1s;
+  cursor: pointer;
+
+}
+.category-product:hover .layer
+{
+  top: 0%;
+}
+.categories:hover .layer
+{
+  top: 0%;
+}
+.products-mayknow:hover .layer
+{
+  top: 0%;
+}
+.category-product img {
+  transition: transform 1s;
+}
+.categories img {
+  transition: transform 1s;
+}
+.products-mayknow img {
+  transition: transform 1s;
+}
+.category-product:hover  img {
+  transform: scale(1.25);
+}
+.categories:hover  img {
+  transform: scale(1.25);
+}
+.products-mayknow:hover  img {
+  transform: scale(1.25);
+}
+.profile-img {
+  width: 200px;
+  height: 200px;
+}
+.user-info h3{
+  color: rgb(82, 19, 75);
+}
+.user-info input{
+  color: rgb(65, 63, 63);
+}
+.statistics{
+  height: 500px;
+  background-color: rgb(161, 154, 154);
+}
+.section-msg {
+  background-color: rgb(217, 217, 217);
+}
+#checkout sup {
+  color: red;
+}
+.chat-img {
+  width: 100px;
+  height: 100px;
+}

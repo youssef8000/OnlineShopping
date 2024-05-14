@@ -1,0 +1,43 @@
+<section class="container py-5">
+  <h1 style="font-size: 50px;">Add New Product</h1>
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <form (ngSubmit)="addProduct(uploadedPhotos)" [formGroup]="productForm" >
+        <label for="category" class="text-muted mt-5">Category</label>
+        <select formControlName="category" id="category" class="btn btn-light text-start px-3 d-block mb-4">
+          <option value="" disabled selected class="fw-bold bg-black">Select Category</option>
+          <option value="bags">Bags</option>
+          <option value="clothes">Clothes</option>
+          <option value="airpods">Airpods</option>
+          <option value="watches">Watches</option>
+          <option value="furniture">Furniture</option>
+        </select>
+        <div class="alert" style="color: red;" *ngIf="fillcategory">{{ fillcategory }}</div>
+
+        <label for="title" class="text-muted">Title</label>
+        <input type="text" formControlName="title" id="title" class="form-control" placeholder="Title">
+        <div class="alert" style="color: red;" *ngIf="fillTitle">{{ fillTitle }}</div>
+
+        <label for="description" class="text-muted">Description</label>
+        <textarea formControlName="description" id="description" class="form-control" cols="30" rows="5" placeholder="Description"></textarea>
+        <div class="alert" style="color: red;" *ngIf="filldescription">{{ filldescription }}</div>
+        <p class="text-muted">Include condition, features, and reason for selling</p>
+
+        <label for="price" class="text-muted">Price</label>
+        <input type="number" formControlName="price" id="price" class="form-control mb-5" placeholder="EGP">
+        <div class="alert" style="color: red;" *ngIf="fillprice">{{ fillprice }}</div>
+
+        <p class="mb-1 text-muted">Upload Photos</p>
+        <input type="file" formControlName="photos" accept="image/*" class="form-control" multiple (change)="onFileSelected($event)">
+
+        <label for="location" class="mt-5 text-muted">Your ad's location</label>
+        <input type="text" formControlName="location" id="location" class="form-control" placeholder="Location">
+        <div class="alert" style="color: red;" *ngIf="filllocation">{{ filllocation }}</div>
+
+        <div class="d-flex justify-content-center mt-4 mb-5 pb-5">
+          <button type="submit" class="btn mx-auto mt-1 py-2 w-25 fw-bold btn-post">Post now</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

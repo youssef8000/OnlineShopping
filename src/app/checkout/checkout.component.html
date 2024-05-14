@@ -1,0 +1,30 @@
+
+
+<section class="container mt-5 p-5 mb-5">
+  <h3 class="mt-3 pb-5 fs-1 fw-bold ms-5">My purchases</h3>
+  <div class="row mx-5 g-5 mb-5 pb-5">
+    <div *ngFor="let product of productsList" >
+      <div *ngFor="let checkout of checkoutList">
+          <div class="col-md-10 offset-md-1 d-flex justify-content-between py-5 px-4 rounded-3 sections" *ngIf="product.id === checkout.product_id">
+              <div class="product-img rounded-3 col-md-3 mx-3">
+                  <a href=""><img [src]="product.photos[0]" alt="" class="w-100 h-100"></a>
+              </div>
+              <div class="col-md-4 ms-md-5 text-center">
+                <p>{{product.title}}</p>
+                <p>{{product.description}}</p>
+                <p class="fw-semibold">Price : {{checkout.total_price}}<span class=""></span><span> EGP</span></p>
+              </div>
+              <div class="d-flex align-items-center" *ngIf="checkout.feedback === ''; else feedbackExists">
+                <div>
+                  <button [routerLink]="['/feedback', checkout.id]" style="background-color: blueviolet; color: white;" class="btn d-block px-4 mb-2 rounded-4 btn-wishlist">Add feedback <i class="fa-solid fa-cart-shopping ps-3"></i></button>
+                </div>
+              </div>
+              <ng-template #feedbackExists>
+                <div class="d-flex align-items-center">
+                  <p class="text-muted">Feedback already provided.</p>
+                </div>
+              </ng-template>
+    </div >
+  </div>
+  </div>
+

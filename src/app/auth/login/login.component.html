@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="./login.component.css">
+
+    <section>
+      <div class="container my-md-5">
+        <div class="row py-md-5">
+          <form action="" class="form">
+            <div class="col-md-12">
+              <header class="text-center">
+                <h2 class="fw-bold">Welcome Back</h2>
+                <h5 class="fw-bold">Enter your credential to login</h5>
+              </header>
+              <div class="col-md-6 offset-md-3 ps-5 my-5">
+                <label for="username" class="form-label fs-6 ms-5 ps-2 fw-bold">Email/Username</label>
+                <input name="email" [(ngModel)]="email" type="text" id="username" class="form-control w-75 ms-5 mb-4" placeholder="Email/Username">
+                <label for="password" class="form-label fs-6 ms-5 ps-2 fw-bold">Password</label>
+                <input name="password" [(ngModel)]="password" type="password" id="password" class="form-control w-75 ms-5" placeholder="Password">
+              </div>
+              <div class="text-center">
+                <button (click)="login()" type="submit" class="btn btn-style fs-5 mb-3 px-5 py-2 rounded-4 fw-bold">Login</button>
+                <a href="/forgot-password" class="d-block text-decoration-none">Forget Password?</a>
+                <a href="/register" class="d-block text-decoration-none mb-5">Don't have an account? Sign up</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="">
+      <div class="container-fluid py-5">
+        <div class="row">
+          <div class="col-md-10 m-auto bg-black foot mt-5 mb-4"></div>
+          <div
+            class="col-md-10 m-auto px-5 mb-1 d-flex justify-content-between fs-5 fw-bold">
+            <p class="px-4 mx-5">Classifieds in Egypt . © 2023</p>
+            <p class="px-4 mx-5">Contuct us</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+

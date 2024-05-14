@@ -1,0 +1,104 @@
+<link rel="stylesheet" href="./navbar.component.css">
+<section>
+  <nav class="container-fluid navbar navbar-expand-lg px-5">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+              <div class="col-md-3">
+                  <a class="navbar-brand fw-normal" [routerLink]="['/chat']" routerLinkActive="/chat"><mat-icon aria-hidden="false" aria-label="Example message icon">message</mat-icon>
+                    Messaging us</a>
+              </div>
+              <div class="col-md-6 text-center">
+                  <a class="navbar-brand fs-2" [routerLink]="['/home']" routerLinkActive="/home">Online Shopping</a>
+              </div>
+
+              <div class="col-md-3 collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ms-auto fs-2">
+                    <li class="nav-item active">
+                      <a class="nav-link mx-2" [routerLink]="['/profile']" routerLinkActive="/profile"><mat-icon style="width: 50px ; height: 60px;" svgIcon="user_icon" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
+                      </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <mat-icon style="width: 50px; height: 60px;" svgIcon="bell_icon" aria-hidden="false" aria-label="Bell icon"></mat-icon>
+                        <sup class="ps-1 fw-semibold">{{ totalnotification }}</sup>
+                      </a>
+                      <ul style="left: -250%;" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li >
+                          <p style="font-size: xx-large;">New Notification</p>
+                        </li>
+                        <hr>
+                        <p style="font-size: 16;">New Message</p>
+                        <li *ngFor="let message of messageList">
+                          <a class="dropdown-item" (click)="markMessageAsRead(message)">{{ message.message }} (from) {{ message.send_email }}</a>
+                        </li>
+                        <li *ngIf="messageList.length === 0">No Message Notification</li>
+                        <hr>
+                        <p style="font-size: 16;">New Wishlist</p>
+                        <ng-container *ngFor="let product of productsList">
+                        <li *ngFor="let wishlist of wishList">
+                          <ng-container *ngIf="product.id === wishlist.product_id">
+                          <a class="dropdown-item" (click)="markwishlistAsRead(wishlist)">
+                            {{ product.title }}
+                          </a>
+                      </ng-container>
+                      </ng-container>
+                        <li *ngIf="wishList.length === 0">No WishList Notification</li>
+                      </ul>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link mx-2" [routerLink]="['/cart']" routerLinkActive="/cart"><mat-icon style="width: 50px ; height: 60px;" svgIcon="cart_icon" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
+                        <sup class="ps-1 fw-semibold">{{totalCartCount}}</sup></a>
+                    </li>
+                  </ul>
+                </div>
+
+
+    </nav>
+
+  <div class="container-fluid d-flex  py-3 px-5 nav-second">
+
+            <form class="d-flex w-50 position-relative" role="search" (submit)="searchProducts()">
+              <input class="form-control w-50 me-2 search-bar rounded-3" [(ngModel)]="search" name="search" type="search" placeholder="Search for anything" aria-label="Search">
+
+              <button class=" position-absolute rounded-end px-3 btn-search" type="submit"><mat-icon aria-hidden="false" aria-label="Example search icon">search</mat-icon>
+              </button>
+
+            </form>
+            <div>
+              <ul class="d-inline-block ">
+                    <li class="nav-item list-unstyled">
+                      <a style="color: black; margin-left: -60px;" class="nav-link fs-5 fw-semibold" [routerLink]="['/home']" routerLinkActive="/home">
+                        Home
+                      </a>
+                    </li>
+              </ul>
+              <ul class="d-inline-block ">
+                <li class="nav-item list-unstyled">
+                  <a style="color: black; margin-left: -45px;" class="nav-link fs-5 fw-semibold" [routerLink]="['/myproduct']" routerLinkActive="/myproduct">
+                    My Product
+                  </a>
+                </li>
+              </ul><ul class="d-inline-block ">
+                <li class="nav-item list-unstyled">
+                  <a style="color: black; margin-left: -45px;" class="nav-link fs-5 fw-semibold" [routerLink]="['/checkout']" routerLinkActive="/checkout">
+                    My purchases
+                  </a>
+                </li>
+              </ul>
+              <ul class="d-inline-block ">
+                <li class="nav-item list-unstyled">
+                  <a style="color: black; margin-left: -45px;" class="nav-link fs-5 fw-semibold" [routerLink]="['/wishlist']" routerLinkActive="/wishlist" >
+                    Wishlist
+                  </a>
+                </li>
+              </ul >
+
+              <button class="btn py-1 fw-bold fs-5 rounded-4 btn-sell" [routerLink]="['add_product']" routerLinkActive="add_product">Sell</button>
+              <button class="btn py-1 mx-2 fw-bold fs-5 rounded-4 btn-sell" (click)="logout()">Logout</button>
+            </div>
+
+      </div>
+
+</section>

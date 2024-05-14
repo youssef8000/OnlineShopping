@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "TaskManagement",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}
